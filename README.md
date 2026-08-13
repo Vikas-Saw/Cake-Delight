@@ -146,8 +146,6 @@ Service    Service    Service
 
 
 
-```text
-
 Cake-Delight/
 
 │

@@ -1,35 +1,35 @@
 # 🍰 Cake Delight
 
-A cloud-native cake ordering application built using a **Spring Boot microservices architecture** with **React, MySQL, RabbitMQ, Docker, and Kubernetes**.
+> A cloud-native cake ordering application built using **Spring Boot Microservices, React, MySQL, RabbitMQ, Docker, and Kubernetes**.
 
-The application supports user authentication, cake catalog management, basket operations, checkout, order tracking, ratings, and asynchronous notifications.
+Cake Delight provides user authentication, cake catalog management, basket operations, checkout, order tracking, ratings, reviews, and asynchronous notifications.
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-Cake Delight is designed as a distributed microservices application where each major business function is handled by an independent service.
+Cake Delight follows a **microservices architecture** where each major business capability is implemented as an independent service.
 
 ### Core Features
 
-- 🔐 JWT-based user authentication
+- 🔐 JWT-based authentication
 - 🍰 Cake catalog and availability
 - 🔎 Cake search and filtering
 - 🛒 Basket management
-- 💳 Order checkout
+- 🧾 Order creation and checkout
 - 📦 Order status tracking
 - ⭐ Ratings and reviews
-- 🔔 Asynchronous order notifications
+- 🔔 Order notifications
 - 📨 RabbitMQ event-driven communication
 - 🗄️ Database-per-service architecture
-- 🐳 Docker containerization
-- ☸️ Kubernetes deployment
-- 💻 React frontend
 - 🚪 API Gateway
+- 🐳 Docker containerization
+- ☸️ Kubernetes configuration
+- 💻 React frontend
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
 ```text
                          React Frontend
@@ -42,18 +42,12 @@ Cake Delight is designed as a distributed microservices application where each m
           v          v          v          v       v
        User       Catalog     Order      Rating  Notification
       :8085        :8080      :8081      :8082     :8083
-          |           |          |           |
-          v           v          v           v
-       user_db    catalog_db  order_db   rating_db
+          |           |          |           |         |
+          v           v          v           v         v
+       user_db    catalog_db  order_db   rating_db  notification_db
                               |
                               v
                           RabbitMQ
-                              |
-                              v
-                     Notification Service
-                              |
-                              v
-                       notification_db
 🧩 Microservices
 Service	Port	Responsibility
 User Service	8085	Registration, login and JWT authentication
@@ -72,18 +66,18 @@ React
 
 Cake Delight uses JWT-based authentication.
 
-Registration
+Register
 POST /users/register
 Login
 POST /users/login
 
-Authenticated APIs use:
+Authenticated requests use:
 
 Authorization: Bearer <JWT_TOKEN>
 
 The authenticated user's identity is used to enforce order, basket, and rating ownership.
 
-🍰 Catalog
+🍰 Catalog Service
 
 The Catalog Service provides:
 
@@ -93,11 +87,9 @@ Cake filtering
 Cake availability
 Cake details
 Cake images
-
-Example:
-
+Example
 GET /cakes
-🛒 Basket & Orders
+🛒 Basket & Order Management
 
 Users can:
 
@@ -105,11 +97,9 @@ Add cakes to the basket
 View the basket
 Update quantities
 Remove items
-Checkout
+Checkout orders
 Track order status
-
-Example:
-
+Main APIs
 POST /orders/basket
 GET /orders/basket/{orderId}
 POST /orders/checkout/{orderId}
@@ -130,7 +120,7 @@ DELIVERED
 
 Cancellation is supported from applicable order states.
 
-⭐ Ratings
+⭐ Rating Service
 
 Users can submit a rating after their order has been delivered.
 
@@ -141,22 +131,20 @@ User ownership
 Order existence
 Delivered order status
 Purchased cake
-Rating value between 1 and 5
+Rating value from 1 to 5
 Duplicate rating prevention
-
-Examples:
-
+Rating APIs
 POST /ratings
 GET /ratings/cake/{cakeId}
 GET /ratings/cake/{cakeId}/average
 📨 RabbitMQ Event-Driven Communication
 
-RabbitMQ is used for asynchronous communication between the Order Service and Notification Service.
+RabbitMQ provides asynchronous communication between the Order Service and Notification Service.
 
 Exchange
 order.exchange
 
-Type: Topic
+Type: Topic Exchange
 
 Events
 order.completed
@@ -181,7 +169,7 @@ The Notification Service uses retry configuration for message processing.
 
 🗄️ Database Architecture
 
-Cake Delight follows a database-per-service approach.
+Cake Delight follows a database-per-service architecture.
 
 Service	Database
 User Service	user_db
@@ -201,13 +189,9 @@ Run Frontend
 cd frontend
 npm install
 npm run dev
-
-Frontend:
-
+Frontend
 http://localhost:5173
-
-API Gateway:
-
+API Gateway
 http://localhost:8084
 🐳 Docker
 
@@ -220,9 +204,7 @@ cake-order-service
 cake-rating-service
 cake-notification-service
 cake-user-service
-
-Example:
-
+Example
 docker build -t cake-user-service:latest .
 ☸️ Kubernetes
 
@@ -235,9 +217,9 @@ Check Services
 kubectl get services
 Check Deployments
 kubectl get deployments
-Apply Kubernetes Configuration
+Apply Configuration
 kubectl apply -f k8s/
-🔄 End-to-End Application Flow
+🔄 End-to-End Flow
 Register
    ↓
 Login
@@ -292,7 +274,7 @@ EVENT_CONTRACTS.md	RabbitMQ events and message contracts
 SETUP_AND_E2E.md	Setup and end-to-end flow
 🛠️ Technology Stack
 Technology	Usage
-Java	Backend
+Java	Backend development
 Spring Boot	Microservices
 Spring Cloud Gateway	API Gateway
 Spring Data JPA	Persistence
@@ -300,20 +282,15 @@ MySQL	Database
 RabbitMQ	Messaging
 JWT	Authentication
 React	Frontend
-Maven	Build Tool
+Maven	Build tool
 Docker	Containerization
-Kubernetes	Orchestration
-🚀 Project Entry Points
-
-Frontend
-
-http://localhost:5173
-
-API Gateway
-
-http://localhost:8084
+Kubernetes	Container orchestration
+🚀 Application Entry Points
+Component	URL
+Frontend	http://localhost:5173
+API Gateway	http://localhost:8084
 👨‍💻 Project
 
 Cake Delight – Cloud-Native Microservices Application
 
-Built using a microservices architecture with REST APIs, asynchronous messaging, containerization, and Kubernetes orchestration.
+Built using a microservices architecture with REST APIs, asynchronous messaging, database-per-service architecture, containerization, and Kubernetes configuration.

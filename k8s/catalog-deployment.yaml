@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cake-catalog-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cake-catalog-service
+  template:
+    metadata:
+      labels:
+        app: cake-catalog-service
+    spec:
+      containers:
+        - name: cake-catalog-service
+          image: cake-catalog-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://host.docker.internal:3306/catalog_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "Vikas@380"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cake-catalog-service
+spec:
+  selector:
+    app: cake-catalog-service
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP

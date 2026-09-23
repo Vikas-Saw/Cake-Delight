@@ -1,0 +1,40 @@
+# Eclipse
+.metadata/
+.recommenders/
+.settings/
+.project
+.classpath
+
+# Maven
+target/
+*.class
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment / secrets
+.env
+
+
+# Environment / secrets
+.env
+
+# Spring Boot configuration / secrets
+**/src/main/resources/application.properties
+**/src/main/resources/application.yml
+**/src/main/resources/application.yaml
+
+# Build/extracted artifacts
+**/BOOT-INF/
+*.tar

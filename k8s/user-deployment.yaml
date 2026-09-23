@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cake-user-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cake-user-service
+  template:
+    metadata:
+      labels:
+        app: cake-user-service
+    spec:
+      containers:
+        - name: cake-user-service
+          image: cake-user-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8085
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cake-user-service
+spec:
+  selector:
+    app: cake-user-service
+  ports:
+    - protocol: TCP
+      port: 8085
+      targetPort: 8085
+  type: ClusterIP

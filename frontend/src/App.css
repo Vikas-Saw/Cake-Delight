@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap");
+
+:root {
+  --cream:#fff8f0; --cream2:#f3dfcf; --rose:#6b351f; --rose2:#8b4a2f;
+  --ink:#2b1710; --muted:#765e54; --gold:#c8892f; --line:#e3cbbd;
+  --white:#fffdfb; --green:#2f8a5a; --shadow:0 18px 55px rgba(69,35,20,.14);
+}
+*{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
+button,input,select,textarea{font:inherit} button{cursor:pointer;border:0}
+.top-strip{background:#32170f;color:#fff;padding:9px 20px;text-align:center;font-size:12px;letter-spacing:.5px}
+.store-header{height:78px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:10px;background:none;text-align:left;color:var(--ink)}.brand-mark{width:44px;height:44px;border-radius:14px;background:var(--cream2);display:grid;place-items:center;font-size:25px}.brand b{display:block;font-family:"Playfair Display";font-size:21px}.brand small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.desktop-nav{display:flex;gap:7px}.desktop-nav button{background:none;padding:10px 14px;color:var(--muted);border-radius:10px}.desktop-nav button:hover,.desktop-nav button.active{background:var(--cream2);color:var(--rose);font-weight:700}
+.header-actions{display:flex;align-items:center;gap:12px}.cart-pill{background:#f3e2d7;color:var(--rose);padding:11px 16px;border-radius:99px;font-weight:700}.cart-pill span{background:var(--rose);color:#fff;border-radius:50%;padding:2px 7px;margin-left:4px}.profile-menu{display:flex;align-items:center;gap:8px}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--rose);color:#fff;font-weight:700}.profile-name{font-weight:700}.ghost-btn{background:none;color:var(--muted);font-size:13px}.primary-btn{background:var(--rose);color:#fff;padding:14px 22px;border-radius:12px;font-weight:700;box-shadow:0 8px 22px rgba(107,53,31,.22);transition:.2s}.primary-btn:hover{transform:translateY(-1px);background:#522817}.primary-btn.small{padding:10px 15px;font-size:13px}.primary-btn.full{width:100%}.secondary-btn{background:#fff;border:1px solid var(--line);color:var(--ink);padding:12px 17px;border-radius:11px;font-weight:700}.text-btn{background:none;color:var(--rose);font-weight:700}.danger-btn{background:#f8e8e1;color:#b33b45;padding:10px 14px;border-radius:10px;font-weight:700}
+.toast{position:fixed;right:25px;top:95px;z-index:100;background:#32170f;color:#fff;padding:14px 18px;border-radius:12px;box-shadow:var(--shadow);max-width:380px}
+.hero-store{max-width:1200px;margin:28px auto 0;min-height:510px;border-radius:32px;background:linear-gradient(115deg,#ffe8df,#fff5ed 58%,#f9dce5);display:grid;grid-template-columns:1.05fr .95fr;align-items:center;padding:65px 7%;overflow:hidden}
+.eyebrow{color:var(--rose);font-size:11px;font-weight:800;letter-spacing:2px}.hero-copy h1{font:800 clamp(43px,6vw,72px)/1.02 "Playfair Display";margin:14px 0;color:#2b2024;max-width:650px}.hero-copy h1 em{color:var(--rose);font-style:normal}.hero-copy p{font-size:17px;line-height:1.7;color:var(--muted);max-width:570px}.hero-buttons{display:flex;gap:12px;margin:28px 0}.hero-note{font-size:12px;color:#74646a}.hero-art{position:relative;min-height:360px;display:grid;place-items:center}.cake-glow{position:absolute;width:360px;height:360px;background:rgba(255,248,240,.72);border-radius:50%;filter:blur(2px)}.cake-emoji{font-size:205px;filter:drop-shadow(0 25px 25px rgba(90,40,50,.16));position:relative;z-index:2}.floating-card{position:absolute;background:#fff;padding:14px 17px;border-radius:15px;box-shadow:var(--shadow);z-index:3;font-size:13px}.floating-card small{display:block;color:var(--muted);margin-top:3px}.card-one{top:40px;right:10px}.card-two{bottom:35px;left:0}
+.stats-row{max-width:1100px;margin:30px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 20px}.stat-card{background:#fff;border:1px solid var(--line);padding:18px;border-radius:17px;display:flex;align-items:center;gap:13px}.stat-card>span{font-size:27px}.stat-card b,.stat-card small{display:block}.stat-card small{color:var(--muted);font-size:11px;margin-top:2px}
+.store-section{max-width:1200px;margin:75px auto;padding:0 25px}.page-section{min-height:65vh}.narrow{max-width:1050px}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}.section-heading h2{font:700 39px "Playfair Display";margin:8px 0}.section-heading p{color:var(--muted);margin:0}.cake-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.cake-card-new{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;box-shadow:0 6px 25px rgba(80,40,50,.04)}.cake-card-new:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.cake-visual{height:190px;background:linear-gradient(135deg,#ead0bd,#f7e5d5);display:grid;place-items:center;position:relative}.cake-visual>span{font-size:88px}.cake-visual img{width:100%;height:190px;object-fit:cover}.cake-tag{position:absolute;left:13px;top:13px;background:#fff;border-radius:99px;padding:6px 9px;font-size:10px;color:var(--rose);font-weight:800}.cake-body{padding:18px}.cake-body h3{font:700 21px "Playfair Display";margin:0 0 8px}.cake-body p{color:var(--muted);font-size:13px;line-height:1.5;min-height:40px}.cake-rating{color:#e2a033;font-size:13px}.cake-rating small{color:var(--muted);margin-left:5px}.cake-footer{display:flex;align-items:center;justify-content:space-between;margin-top:16px}.cake-footer>b{font-size:20px;color:var(--rose)}.rate-link{background:none;color:var(--muted);font-size:11px;margin-top:11px;padding:0}.shop-toolbar{display:flex;gap:12px;margin-bottom:28px}.search-box{background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 14px;display:flex;align-items:center;flex:1;color:var(--muted)}.search-box input{border:0;outline:0;background:none;width:100%;padding:13px}.shop-toolbar select{border:1px solid var(--line);border-radius:12px;padding:0 15px;background:#fff}
+.feature-banner{max-width:1150px;margin:80px auto;padding:50px;border-radius:28px;background:#3a1f15;color:#fff;display:flex;justify-content:space-between;align-items:center}.feature-banner .eyebrow{color:#f4b4c5}.feature-banner h2{font:700 35px "Playfair Display";margin:12px 0}.feature-banner p{color:#ead8ce;max-width:650px;line-height:1.6}.feature-icons{display:flex;gap:15px}.feature-icons span{width:65px;height:65px;border-radius:20px;background:#57301f;display:grid;place-items:center;font-size:29px}
+.cart-layout{display:grid;grid-template-columns:1.5fr .75fr;gap:24px}.cart-items{display:grid;gap:12px}.cart-row{display:grid;grid-template-columns:60px 1fr auto auto auto;align-items:center;gap:15px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}.mini-cake{width:60px;height:60px;background:var(--cream2);border-radius:12px;display:grid;place-items:center;font-size:30px}.cart-info b,.cart-info span{display:block}.cart-info span{color:var(--muted);font-size:12px;margin-top:4px}.qty{display:flex;align-items:center;gap:10px}.qty button{width:30px;height:30px;border-radius:8px;background:var(--cream2);color:var(--rose);font-weight:800}.row-total{min-width:70px;text-align:right}.remove-btn{background:none;color:#b25a67;font-size:12px}.checkout-card{background:#32170f;color:#fff;border-radius:20px;padding:25px;height:max-content;position:sticky;top:100px}.checkout-card h3{font:700 23px "Playfair Display"}.checkout-card>div{display:flex;justify-content:space-between;margin:14px 0;color:#ddd}.checkout-card hr{border:0;border-top:1px solid #56474d}.checkout-card .grand{font-size:19px;color:#fff}.checkout-card .grand b{color:#ffb1c7}.checkout-card small{display:block;color:#cdb7aa;text-align:center;margin-top:12px;font-size:10px}
+.orders-grid{display:grid;gap:18px}.order-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:23px}.order-top{display:flex;justify-content:space-between;gap:20px}.order-number{font-size:10px;letter-spacing:1.5px;color:var(--rose);font-weight:800}.order-card h3{font:700 23px "Playfair Display";margin:6px 0}.status-badge{padding:7px 11px;border-radius:99px;font-size:10px;font-weight:800;height:max-content}.status-placed{background:#f8ead1;color:#8a5b18}.status-confirmed{background:#e8edf0;color:#49636e}.status-preparing{background:#eee5da;color:#73523f}.status-out_for_delivery{background:#e4f2e9;color:#2f8a5a}.status-delivered{background:#dff1e6;color:#287348}.status-cancelled{background:#f8e1dd;color:#9a4035}.order-meta{display:flex;gap:20px;color:var(--muted);font-size:13px;margin:12px 0 22px}.progress{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin:10px 0 22px}.progress-step{text-align:center;color:#aaa;position:relative}.progress-step span{width:27px;height:27px;border-radius:50%;background:#eee;display:grid;place-items:center;margin:auto;font-size:11px}.progress-step.done{color:var(--rose)}.progress-step.done span{background:#ead4c5;color:var(--rose)}.progress-step small{display:block;font-size:8px;margin-top:6px}.order-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.delivered-note{font-size:12px;color:var(--green);font-weight:700}
+.orders-mini{display:grid;gap:10px}.mini-order{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 17px;display:flex;align-items:center;gap:15px}.mini-order .status-badge{margin-left:auto}.review-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.review-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.review-head{display:flex;align-items:center;gap:10px}.review-avatar{width:38px;height:38px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-weight:700}.review-head b,.review-head small{display:block}.review-head small{color:var(--muted);font-size:11px;margin-top:2px}.review-head>span{margin-left:auto;color:#e3a13b}.review-card p{line-height:1.6;color:#5d4338}
+.empty-state{text-align:center;background:#fff;border:1px dashed var(--line);border-radius:20px;padding:55px 20px}.empty-state>span{font-size:46px}.empty-state h3{font:700 25px "Playfair Display";margin:12px 0 6px}.empty-state p{color:var(--muted);margin-bottom:20px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(31,21,25,.62);backdrop-filter:blur(6px);z-index:50;display:grid;place-items:center;padding:20px}.rating-modal,.auth-modal{width:min(500px,100%);background:#fff;border-radius:25px;padding:32px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.25)}.rating-modal{text-align:center}.modal-close{position:absolute;right:16px;top:13px;background:#f3e1d6;width:33px;height:33px;border-radius:50%;font-size:22px;color:var(--muted)}.modal-icon{font-size:44px;display:block}.rating-modal h2,.auth-modal h2{font:700 30px "Playfair Display";margin:8px 0}.rating-modal p,.auth-modal>p{color:var(--muted);line-height:1.5}.star-picker{display:flex;justify-content:center;gap:4px;margin:20px 0}.star-picker button{background:none;font-size:36px;color:#ddd}.star-picker button.selected{color:#e4a03a}.rating-modal textarea,.auth-form-new input{width:100%;border:1px solid var(--line);border-radius:12px;padding:13px;outline:none;margin:8px 0 17px;background:#fff}.auth-art{width:70px;height:70px;background:var(--cream2);border-radius:20px;display:grid;place-items:center;font-size:38px;margin-bottom:17px}.auth-form-new label{font-size:12px;font-weight:700;color:#57484e}.auth-form-new input{display:block}.auth-switch{text-align:center;margin-top:18px;color:var(--muted);font-size:13px}.auth-switch button{background:none;color:var(--rose);font-weight:800}
+.footer{margin-top:90px;background:#32170f;color:#fff;padding:50px 7%;display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px}.footer-brand{color:#fff}.footer p{color:#cdb8ad;max-width:330px}.footer>b,.footer>div>b{display:block;margin-bottom:15px}.footer>div:not(:first-child){display:flex;flex-direction:column;gap:10px}.footer button,.footer span{background:none;color:#d9c3b6;text-align:left;font-size:13px}
+
+@media(max-width:900px){.desktop-nav{display:none}.hero-store{grid-template-columns:1fr;padding:45px 7%;text-align:center}.hero-copy p{margin-left:auto;margin-right:auto}.hero-buttons{justify-content:center}.hero-art{min-height:280px}.cake-grid{grid-template-columns:repeat(2,1fr)}.stats-row{grid-template-columns:repeat(2,1fr)}.cart-layout{grid-template-columns:1fr}.review-grid{grid-template-columns:1fr}.footer{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.store-header{padding:0 15px}.profile-name{display:none}.brand small{display:none}.hero-store{margin:0;border-radius:0}.cake-grid{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr;padding:0 12px}.store-section{padding:0 15px;margin-top:50px}.section-heading{align-items:start;flex-direction:column}.section-heading h2{font-size:31px}.cart-row{grid-template-columns:50px 1fr auto}.cart-row .row-total,.cart-row .remove-btn{grid-column:2}.qty{grid-column:3;grid-row:1}.feature-banner{margin:50px 15px;padding:30px;display:block}.feature-icons{margin-top:20px}.toast{left:15px;right:15px;top:88px}.footer{grid-template-columns:1fr;padding:40px 25px}.cake-emoji{font-size:150px}.floating-card{font-size:11px}.card-one{right:-5px}.card-two{left:-5px}.hero-copy h1{font-size:45px}}
+
+/* Chocolate bakery refinements */
+.rating-modal textarea,
+.auth-form-new input,
+.search-box input,
+.shop-toolbar select {
+  color: #2b1710;
+  background: #fffdfb;
+}
+.rating-modal textarea::placeholder,
+.auth-form-new input::placeholder {
+  color: #987f72;
+}
+.rating-modal textarea:focus,
+.auth-form-new input:focus,
+.search-box:focus-within,
+.shop-toolbar select:focus {
+  border-color: #8b4a2f;
+  box-shadow: 0 0 0 3px rgba(107,53,31,.10);
+}
+.review-card p {
+  color: #4f352b;
+}
+
+.real-cake-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cake-card-new:hover .real-cake-image {
+  transform: scale(1.05);
+}
+
+.cake-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.cake-visual .cake-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+}
